@@ -1,4 +1,5 @@
 # Island-Slots-Game
+<<<<<<< HEAD
 # Island-Slots-Game
 # Island-Slots-Game
 # Island-Slots-Game
@@ -58,3 +59,6 @@ That main div will utilize a flex display with a 5x5 grid
              empty  empty empty empty empty
              wager wager wager wager wager
              empty empty play empty empty 
+=======
+
+>>>>>>> f9eed7575f9b147dc76ef48b7d1b82623892c50b
