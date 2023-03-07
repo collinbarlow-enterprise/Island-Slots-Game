@@ -1,0 +1,201 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background: rgb(27,206,208);
+background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30%, rgba(222,189,35,1) 80%, rgba(246,121,55,1) 100%);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.board {
+    display: grid;
+    width: 75%;
+    height: 75%;
+    grid-template-areas:
+    ". winLose purse"
+    "spin1 spin2 spin3"
+    "wager1 wager2 wager3"
+    ". play .";
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 1fr 1fr;
+    background-color: rgb(255, 213, 213);
+    border-radius: 5%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px 5px;
+    place-self: center;
+}
+
+#reset {
+    grid-area: winLose;
+    margin-top: 100px;
+    visibility: hidden;
+}
+
+#reset:hover {
+    background-color: lightgrey;
+}
+
+#winLose {
+    visibility: hidden;
+    grid-area: winLose;
+    place-self: center;
+    color: red;
+}
+
+#purse {
+    display: grid;
+    grid-area: purse;
+    justify-items: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 50px;
+    padding: 10px;
+    height: 40%;
+}
+
+#spin1 {
+    max-width: 150px;
+    max-height: 150px;
+    padding: 20px;
+    display: grid;
+    grid-area: spin1;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 10px 50px;
+    background-color: lightblue;
+
+}
+#spin2 {
+    max-width: 150px;
+    max-height: 150px;
+    padding: 20px;
+    display: grid;
+    grid-area: spin2;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 10px 30px;
+    background-color: lightblue;
+    
+} 
+#spin3{
+    max-width: 150px;
+    max-height: 150px;
+    padding: 20px;
+    display: grid;
+    grid-area: spin3;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 10px 30px;
+    background-color: lightblue;
+}
+
+/* .spinners {
+    display: grid;
+    justify-items: center;
+} */
+
+#wager1 {
+    display:grid;
+    grid-area: wager1;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1;
+    grid-template-rows: 3;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 10px;
+    width: 100px;
+    padding: 15px;
+    height: 50px;
+    place-self: center;
+}
+#wager2 {
+    display:grid;
+    grid-area: wager2;
+    /* justify-items: center;
+    align-items: center;
+    text-align: center; */
+    place-self: center;
+    grid-template-columns: 2;
+    grid-template-rows: 3;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 10px;
+    width: 100px;
+    padding: 15px;
+    height: 50px;
+}
+#wager3 {
+    /* display:grid; */
+    grid-area: wager3;
+    justify-items: center;
+    align-items: center;
+    grid-column: 3;
+    grid-row: 3;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 10px;
+    width: 100px;
+    padding: 15px;
+    height: 50px;
+    place-self: center;    
+}
+
+#wager1:hover {
+    background-color: lightgrey;
+}
+#wager2:hover {
+    background-color: lightgrey;
+}
+#wager3:hover {
+    background-color: lightgrey;
+}
+
+#play {
+    display: grid;
+    grid-area: play;
+    grid-template-columns: 2;
+    grid-template-rows: 4;
+    padding: 10px;
+    margin: -20px 15px 15px ;
+    
+}
+
+/* .wager4 { - removing to see if grid area will work with a 3x4 grid
+    grid-area: wager4;
+} */
