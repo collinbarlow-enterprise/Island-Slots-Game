@@ -17,7 +17,7 @@ h1 {
     width: 75%;
     height: 75%;
     grid-template-areas:
-    ". winLose purse"
+    "winnings winLose purse"
     "spin1 spin2 spin3"
     "wager1 wager2 wager3"
     ". play .";
@@ -52,6 +52,21 @@ h1 {
 #purse {
     display: grid;
     grid-area: purse;
+    justify-items: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    margin: 50px;
+    padding: 10px;
+    height: 40%;
+}
+
+#winnings {
+    display: grid;
+    grid-area: winnings;
     justify-items: center;
     align-items: center;
     background-color: whitesmoke;
@@ -201,7 +216,24 @@ h1 {
     grid-template-columns: 2;
     grid-template-rows: 4;
     padding: 10px;
-    margin: -20px 15px 15px ;
+    margin: 0px 15px 15px ;
+    
+}
+
+#currentWager {
+    display: grid;
+    grid-area: play;
+    grid-template-columns: 2;
+    grid-template-rows: 4;
+    padding: 10px;
+    margin: -100px 15px 15px ;
+    justify-items: center;
+    align-items: center;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+    background-color: whitesmoke;
     
 }
 

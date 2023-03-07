@@ -31,21 +31,26 @@ let spin3El = document.getElementById("spin3");
 
 //need to code an onclick evt for each of these that update the wager value with their specified value
 let wagerBtn10 = document.getElementById("wager1")
-let wagerBtn50 = document.getElementById("wager2")
-let wagerBtn100 = document.getElementById("wager3")
+let wagerBtn20 = document.getElementById("wager2")
+let wagerBtn50 = document.getElementById("wager3")
 
  //need to put this in a function
 let purseEl = document.getElementById("purse");
-//purseEl.style.innerText = purse
+
+let winningsEl = document.getElementById("winnings");
+let currentWagerEl = document.getElementById("currentWager");
 
   /*----- event listeners -----*/
-document.querySelector("#wager1").addEventListener('click', setWager);
-document.querySelector("#wager2").addEventListener('click', setWager);
-document.querySelector("#wager3").addEventListener('click', setWager);
-document.querySelector("#play").addEventListener('click', render); // render as the call back?
+wagerBtn10.addEventListener('click', setWager);
+wagerBtn20.addEventListener('click', setWager);
+wagerBtn50.addEventListener('click', setWager);
+wagerBtn10.addEventListener('click', updateWagerEl);
+wagerBtn20.addEventListener('click', updateWagerEl);
+wagerBtn50.addEventListener('click', updateWagerEl);
+
+document.querySelector("#play").addEventListener('click', render);
+
 document.querySelector("#reset").addEventListener('click', init);
-
-
 
   /*----- functions -----*/
 
@@ -64,8 +69,10 @@ resetBtnEl.style.visibility = "hidden";
 function render() {
     //had setWager here but think render should be nested inside setWager?
     // setWager();
+    // updateWagerEl();//only updates on play being clicked - need to add evt listener and set it seperate
     getSpinner();
     updatePurse();
+    updateWinnings();
     endGame();
   }
 
@@ -132,12 +139,18 @@ function endGame(){
 //if wins add that amount to the purse
 
 function updatePurse() {
-   document.getElementById("purse").innerHTML = `Purse: ${purse}`; 
+   purseEl.innerHTML = `Purse: ${purse}`; 
 };
 
 function setWager(evt) {
     wager = evt.target.innerText;
-    // render(); //by including render here it eliminates the need for the play button 
 }
 
+function updateWinnings() {
+   winningsEl.innerHTML = `Winnings: ${purse-1000}`;
+};
+
+function updateWagerEl() {
+    currentWagerEl.innerHTML = `Wager: ${wager}`; 
+ };
  
