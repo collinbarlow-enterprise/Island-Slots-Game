@@ -79,8 +79,8 @@ function render() {
     // setWager();
     // updateWagerEl();//only updates on play being clicked - need to add evt listener and set it seperate
     animateSlots();
-    void spinAllEl.offsetHeight;
-    // getSpinner();
+    // void spinAllEl.offsetHeight;
+    getSpinner(); 
     updatePurse();
     updateWinnings();
     endGame();
@@ -110,7 +110,7 @@ function animateSlots() {
     spinAllEl.forEach((slot) => {
     slot.style.animation ;})
     setTimeout(getSpinner, 2000);
-    void spinAllEl.offsetHeight;
+    // void spinAllEl.offsetHeight;
 }
 
 //call and cache 3 spinner functions
