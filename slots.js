@@ -108,7 +108,7 @@ function getSpinner3() {
 
 function animateSlots() {
     spinAllEl.forEach((slot) => {
-    slot.style.animation ;})
+    slot.style.animation = "scrollSlot 3 linear 0 2 normal none"});
     setTimeout(getSpinner, 2000);
     // void spinAllEl.offsetHeight;
 }
