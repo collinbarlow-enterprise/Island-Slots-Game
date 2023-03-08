@@ -14,8 +14,6 @@ const WAGERAMOUNTS = {
 
   /*----- state variables -----*/
 let purse = 1000; //start with 0 and update as game progresses
-let winner = " " ; //winner will be kicked in if purse reaches a specific amount 
-let loser = " "; //if purse hits 0, game will be over
 let wager = " "; //variable to hold WAGERAMOUNTS value that will be triggered by DOM elements
 
   /*----- cached elements  -----*/
@@ -40,13 +38,18 @@ let purseEl = document.getElementById("purse");
 let winningsEl = document.getElementById("winnings");
 let currentWagerEl = document.getElementById("currentWager");
 
+let loseSoundAudio = document.getElementById("loseSound");
+let coinSoundAudio = document.getElementById("coinSound");
+let winSoundAudio = document.getElementById("winSound");
+
   /*----- event listeners -----*/
 wagerBtn10.addEventListener('click', setWager);
 wagerBtn20.addEventListener('click', setWager);
 wagerBtn50.addEventListener('click', setWager);
-wagerBtn10.addEventListener('click', updateWagerEl);
-wagerBtn20.addEventListener('click', updateWagerEl);
-wagerBtn50.addEventListener('click', updateWagerEl);
+
+// wagerBtn10.addEventListener('click', updateWagerEl);
+// wagerBtn20.addEventListener('click', updateWagerEl);
+// wagerBtn50.addEventListener('click', updateWagerEl); //don't need anymore since updateWagerEl() is nested within setWager();
 
 document.querySelector("#play").addEventListener('click', render);
 
@@ -60,6 +63,7 @@ document.querySelector("#reset").addEventListener('click', init);
 function init() {
  purse = 1000;
 updatePurse();
+updateWinnings();
 winLoseEl.style.visibility = "hidden";
 playBtnEl.style.visibility = "visible";
 resetBtnEl.style.visibility = "hidden";
@@ -107,10 +111,13 @@ function getSpinner() {
     let spin3 = getSpinner3();
     document.getElementById("spin3").src = `${SPINNERS[spin3].img}`; 
     if (spin1 === "banana" && spin1 === spin2 && spin1 === spin3) {
+        coinSoundAudio.play();
         return purse = wager*10 + purse;
     } else if (spin1 === "mango" && spin1 === spin2 && spin1 === spin3) {
+        coinSoundAudio.play();
         return purse = wager*7 + purse;
     } else if (spin1 === "pineapple" && spin1 === spin2 && spin1 === spin3) {
+        coinSoundAudio.play();
         return purse = wager*5 + purse;
     } else {
         return purse = purse - wager;
@@ -120,11 +127,13 @@ function getSpinner() {
 // evaluates what to do when a endGame condition is met
 function endGame(){
     if (purse <= 0) {
+        loseSoundAudio.play();
         winLoseEl.innerText = "YOU LOSE";
         winLoseEl.style.visibility = "visible";
         playBtnEl.style.visibility = "hidden";
         resetBtnEl.style.visibility = "visible";
     } else if (purse >= 2000) {
+        winSoundAudio.play();
         winLoseEl.innerText = "YOU WIN";
         winLoseEl.style.visibility = "visible";
         playBtnEl.style.visibility = "hidden";
@@ -144,13 +153,14 @@ function updatePurse() {
 
 function setWager(evt) {
     wager = evt.target.innerText;
+    updateWagerEl();
 }
 
 function updateWinnings() {
-   winningsEl.innerHTML = `Winnings: ${purse-1000}`;
+   winningsEl.innerHTML = `WINNINGS: ${purse-1000}`;
 };
 
 function updateWagerEl() {
-    currentWagerEl.innerHTML = `Wager: ${wager}`; 
+    currentWagerEl.innerHTML = `WAGER: ${wager}`; 
  };
  
