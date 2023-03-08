@@ -32,6 +32,65 @@ h1 {
     place-self: center;
 }
 
+.spinMain {
+    grid-area: spin1;
+    display: flexbox;
+    flex-direction: column;
+    max-width: 250px; 
+    max-height: 210px;
+     /* overflow: hidden; */
+}
+.spinMain2 {
+    grid-area: spin2;
+    display: flexbox;
+    flex-direction: column;
+    max-width: 250px; 
+    max-height: 210px;
+     /* overflow: hidden; */
+}
+.spinMain3 {
+    grid-area: spin3;
+    display: flexbox;
+    flex-direction: column;
+    max-width: 250px; 
+    max-height: 210px;
+     /* overflow: hidden; */
+}
+
+.cells {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-color: black;
+    border: 2px;
+    border-style: solid;
+    border-radius: 20%;
+}
+#winnings {
+    grid-area: winnings;
+    margin: 50px;
+    padding: 10px;
+    height: 40%;
+}
+#purse {
+    grid-area: purse;
+    margin: 50px;
+    padding: 10px;
+    height: 40%;
+}
+#play {
+    grid-area: play;
+    padding: 10px;
+    margin: 0px 15px 15px ;
+    
+}
+#currentWager {
+    grid-area: play;
+    padding: 10px;
+    margin: -100px 15px 15px ;    
+}
+
 #reset {
     grid-area: winLose;
     margin-top: 100px;
@@ -48,99 +107,58 @@ h1 {
     place-self: center;
     color: red;
 }
-
-#purse {
-    display: grid;
-    grid-area: purse;
-    justify-items: center;
-    align-items: center;
-    background-color: whitesmoke;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    margin: 50px;
-    padding: 10px;
-    height: 40%;
+@keyframes scrollSlot {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(100%)}
 }
-
-#winnings {
-    display: grid;
-    grid-area: winnings;
-    justify-items: center;
-    align-items: center;
-    background-color: whitesmoke;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    margin: 50px;
-    padding: 10px;
-    height: 40%;
-}
-
-#spin1 {
-    max-width: 150px;
-    max-height: 150px;
+.spinners {
     padding: 20px;
-    display: grid;
-    grid-area: spin1;
+    display: flexbox;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 1;
-    grid-template-rows: 3;
+    /* grid-template-columns: 1;
+    grid-template-rows: 3; */
     border-color: black;
     border: 2px;
     border-style: solid;
     border-radius: 20%;
     margin: 10px 50px;
     background-color: lightblue;
+    animation-name; scrollSlot: 
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    max-width: 150px;
+    max-height: 150px;
+}
 
+#spin1 {
+    /* grid-area: spin1; */
+    max-width: 150px;
+    max-height: 150px;
+}
+#spintest {
+    /* grid-area: spin1; */
+    max-width: 150px;
+    max-height: 150px;
+}
+#spintest1 {
+    /* grid-area: spin1; */
+    max-width: 150px;
+    max-height: 150px;
 }
 #spin2 {
+    /* grid-area: spin2; */
     max-width: 150px;
     max-height: 150px;
-    padding: 20px;
-    display: grid;
-    grid-area: spin2;
-    align-items: center;
-    justify-items: center;
-    grid-template-columns: 1;
-    grid-template-rows: 3;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    margin: 10px 30px;
-    background-color: lightblue;
-    
 } 
 #spin3{
-    max-width: 150px;
+    /* grid-area: spin3; */
+       max-width: 150px;
     max-height: 150px;
-    padding: 20px;
-    display: grid;
-    grid-area: spin3;
-    align-items: center;
-    justify-items: center;
-    grid-template-columns: 1;
-    grid-template-rows: 3;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    margin: 10px 30px;
-    background-color: lightblue;
 }
 
-/* .spinners {
-    display: grid;
-    justify-items: center;
-} */
-
-#wager1 {
+.bets {
     display:grid;
-    grid-area: wager1;
     align-items: center;
     justify-items: center;
     grid-template-columns: 1;
@@ -154,89 +172,16 @@ h1 {
     padding: 15px;
     height: 50px;
     place-self: center;
+}
+#wager1 {
+    grid-area: wager1;
 }
 #wager2 {
-    display:grid;
     grid-area: wager2;
-    /* justify-items: center;
-    align-items: center;
-    text-align: center; */
-    place-self: center;
-    grid-template-columns: 2;
-    grid-template-rows: 3;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    margin: 10px;
-    width: 100px;
-    padding: 15px;
-    height: 50px;
 }
 #wager3 {
-    /* display:grid; */
     grid-area: wager3;
-    justify-items: center;
-    align-items: center;
-    grid-column: 3;
-    grid-row: 3;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    margin: 10px;
-    width: 100px;
-    padding: 15px;
-    height: 50px;
-    place-self: center;    
 }
-
-#wager1:hover {
+.bets:hover {
     background-color: lightgrey;
 }
-#wager2:hover {
-    background-color: lightgrey;
-}
-#wager3:hover {
-    background-color: lightgrey;
-}
-/* #wager1:active {
-    background-color: lightgrey;
-}
-#wager2:active {
-    background-color: lightgrey;
-}
-#wager3:active {
-    background-color: lightgrey;
-} */
-
-#play {
-    display: grid;
-    grid-area: play;
-    grid-template-columns: 2;
-    grid-template-rows: 4;
-    padding: 10px;
-    margin: 0px 15px 15px ;
-    
-}
-
-#currentWager {
-    display: grid;
-    grid-area: play;
-    grid-template-columns: 2;
-    grid-template-rows: 4;
-    padding: 10px;
-    margin: -100px 15px 15px ;
-    justify-items: center;
-    align-items: center;
-    border-color: black;
-    border: 2px;
-    border-style: solid;
-    border-radius: 20%;
-    background-color: whitesmoke;
-    
-}
-
-/* .wager4 { - removing to see if grid area will work with a 3x4 grid
-    grid-area: wager4;
-} */
