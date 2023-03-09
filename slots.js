@@ -2,9 +2,9 @@ console.log("hello");
 
   /*----- constants -----*/
 const SPINNERS = {
-    pineapple: {img: 'img/pineapple.png', value: 30},
-    mango: {img: 'img/mango.png', value: 50},
-    banana: {img: 'img/banana.png', value: 100},
+    pineapple: {img: 'img/pineapple.png', value: 3},
+    mango: {img: 'img/mango.png', value: 5},
+    banana: {img: 'img/banana.png', value: 10},
 }
 const WAGERAMOUNTS = {
     wager1: 10,
@@ -12,11 +12,15 @@ const WAGERAMOUNTS = {
     wager3: 50,
 }
 
+const fruitKeys = Object.keys(SPINNERS);
+let rndIdx = Math.floor(Math.random() * fruitKeys.length);
+
+
   /*----- state variables -----*/
 let purse = 1000; //start with 0 and update as game progresses
 let wager = " "; //variable to hold WAGERAMOUNTS value that will be triggered by DOM elements
 
-let fruitsIdx = [];
+
 
   /*----- cached elements  -----*/
 let winLoseEl = document.getElementById("winLose");
@@ -24,11 +28,11 @@ let playBtnEl = document.getElementById("play");
 let resetBtnEl = document.getElementById("reset");
 
 //set a DOM element for each spinner image and then update that image using the SPINNERS img src 
-let spin1El = document.getElementById("spin1");
-let spin2El = document.getElementById("spin2");
-let spin3El = document.getElementById("spin3");
+let spin1El = document.getElementById("spin1").src;
+let spin2El = document.getElementById("spin2").src;
+let spin3El = document.getElementById("spin3").src;
 let spinAllEl = document.querySelectorAll(".spinners") //should be able to get rid of spin1el, etc, and replace with a forEach loop
-testArray = Array.from(spinAllEl);
+let spinAllArray = Array.from(spinAllEl);
 
 //need to code an onclick evt for each of these that update the wager value with their specified value
 let wagerBtn10 = document.getElementById("wager1")
@@ -52,11 +56,6 @@ wagerBtn20.addEventListener('click', setWager);
 wagerBtn50.addEventListener('click', setWager);
 // wagerBtnAllEl.addEventListener('click', setWager); //should be able to replace these event listeners with wagerBtnAllEl now
 
-
-// wagerBtn10.addEventListener('click', updateWagerEl);
-// wagerBtn20.addEventListener('click', updateWagerEl);
-// wagerBtn50.addEventListener('click', updateWagerEl); //don't need anymore since updateWagerEl() is nested within setWager();
-
 document.querySelector("#play").addEventListener('click', render);
 
 document.querySelector("#reset").addEventListener('click', init);
@@ -71,39 +70,41 @@ playBtnEl.style.visibility = "visible";
 resetBtnEl.style.visibility = "hidden";
 }
 function render() {
-    getSpinnerIdx();   
-    getSpinner(); 
+    getSpinnerIdx();
+    // debugger   
+    // getSpinner(); 
+    // debugger
     updatePurse();
     updateWinnings();
     endGame();
 }
 
 function getSpinnerIdx() {
-    testArray.forEach((fruit) => {
-        const fruits = Object.keys(SPINNERS);
-        const rndIdx = Math.floor(Math.random() * fruits.length);
-        return fruitsIdx.push((fruits[rndIdx]));
-    })};
+    spinAllArray.forEach((fruit) => {
+        const fruitKeys = Object.keys(SPINNERS);
+        let rndIdx = Math.floor(Math.random() * fruitKeys.length);
+        fruit.setAttribute("src",`${SPINNERS[fruitKeys[rndIdx]].img}`)});
+    // })};
 
- function getSpinner() { 
-    testArray.forEach((block) => {
-        block.src = `${SPINNERS[fruitsIdx].img}`;
-       });
-
-    if (spin1El === "banana" && spin1El === spin2El && spin1El === spin3El) {
+  
+//  function getSpinner() { 
+    if (spinAllArray[0].src === spinAllArray[1].src && spinAllArray[0].src === spinAllArray[2].src) {
         coinSoundAudio.volume = 0.2; 
         coinSoundAudio.play();
-        return purse = wager*10 + purse;
-    debugger
-    } else if (spin1El === "mango" && spin1El === spin2El && spin1El === spin3El) {
-        coinSoundAudio.volume = 0.2; 
-        coinSoundAudio.play();
-        return purse = wager*7 + purse;
-
-    } else if (spin1El === "pineapple" && spin1El === spin2El && spin1El === spin3El) {
-        coinSoundAudio.volume = 0.2; 
-        coinSoundAudio.play();
-        return purse = wager*5 + purse;
+        // debugger        
+        console.log(purse);
+        purse = parseInt(`${wager*SPINNERS[fruitKeys[rndIdx]].value}`) + purse;
+        console.log(purse);
+        // debugger
+     
+    // } else if (spin1El === "mango" && spin1El === spin2El && spin1El === spin3El) {
+    //     coinSoundAudio.volume = 0.2; 
+    //     coinSoundAudio.play();
+    //     return purse = wager*7 + purse;
+    // } else if (spin1El === "pineapple" && spin1El === spin2El && spin1El === spin3El) {
+    //     coinSoundAudio.volume = 0.2; 
+    //     coinSoundAudio.play();
+    //     return purse = wager*5 + purse;
 
     } else {
         return purse = purse - wager;
@@ -148,36 +149,3 @@ function updateWagerEl() {
     currentWagerEl.innerHTML = `WAGER: ${wager}`; 
  };
  
-
- //forgotten animation lines of code
- function animateSlots() {
-    spinAllEl.forEach((slot) => {
-    slot.classList.add(".p");
-    // slot.style.animation = "none";
-    // void slot.offsetHeight;
-    // slot.style.animationName = "scrollSlot";
-})};   
-function stopSlots() {
-    spinAllEl.forEach((slot) => { 
-    slot.classList.remove(".p");})
-    // void slot.offsetHeight;
-    // slot.style.animation = "none";
-    setTimeout(getSpinner, 2000);
-    console.log("animate slot works");
-}
-//forgotten render code with animation functions nested
-// function render() {
-//     //had setWager here but think render should be nested inside setWager?
-//     // setWager();
-//     // updateWagerEl();//only updates on play being clicked - need to add evt listener and set it seperate
-//     // void spinAllEl.offsetHeight;
-   
-//     animateSlots();
-//     setTimeout(stopSlots(),2000);
-//     getSpinnerIdx();   
-//     getSpinner(); 
-//     // animateSlots();
-//     updatePurse();
-//     updateWinnings();
-//     endGame();
-//   }

@@ -32,31 +32,6 @@ h1 {
     place-self: center;
 }
 
-.spinMain {
-    grid-area: spin1;
-    display: flexbox;
-    flex-direction: column;
-    max-width: 250px; 
-    max-height: 210px;
-     /* overflow: hidden; */
-}
-.spinMain2 {
-    grid-area: spin2;
-    display: flexbox;
-    flex-direction: column;
-    max-width: 250px; 
-    max-height: 210px;
-     /* overflow: hidden; */
-}
-.spinMain3 {
-    grid-area: spin3;
-    display: flexbox;
-    flex-direction: column;
-    max-width: 250px; 
-    max-height: 210px;
-     /* overflow: hidden; */
-}
-
 .cells {
     display: grid;
     justify-items: center;
@@ -83,7 +58,6 @@ h1 {
     grid-area: play;
     padding: 10px;
     margin: 0px 15px 15px ;
-    
 }
 #currentWager {
     grid-area: play;
@@ -96,7 +70,6 @@ h1 {
     margin-top: 100px;
     visibility: hidden;
 }
-
 #reset:hover {
     background-color: lightgrey;
 }
@@ -107,28 +80,12 @@ h1 {
     place-self: center;
     color: red;
 }
-@keyframes scrollSlot {
-    /* 0% {transform: translateY(-105%)};
-    50% {transform: translateY(25%)};    
-    100% {transform: translateY(0%)};     */
-    0% {transform: rotate(2turn) translateY(-105%)};
-    100% {transform: rotate(3turn) translateY(25%)};    
-    /* 100% {transform: rotate(6turn)};     */
-}
-.p.spinners{
-animation-name: scrollSlot; 
-animation-duration: 3s;
-animation-iteration-count: 30;
-animation-fill-mode: unset;
-}
 
 .spinners {
     padding: 20px;
     display: flexbox;
     align-items: center;
     justify-items: center;
-    /* grid-template-columns: 1;
-    grid-template-rows: 3; */
     border-color: black;
     border: 2px;
     border-style: solid;
@@ -140,37 +97,19 @@ animation-fill-mode: unset;
 }
 
 #spin1 {
-    /* grid-area: spin1; */
-    max-width: 150px;
-    max-height: 150px;
-}
-#spintest {
-    /* grid-area: spin1; */
-    max-width: 150px;
-    max-height: 150px;
-}
-#spintest1 {
-    /* grid-area: spin1; */
-    max-width: 150px;
-    max-height: 150px;
+    grid-area: spin1;
 }
 #spin2 {
-    /* grid-area: spin2; */
-    max-width: 150px;
-    max-height: 150px;
+    grid-area: spin2;
 } 
 #spin3{
-    /* grid-area: spin3; */
-       max-width: 150px;
-    max-height: 150px;
+    grid-area: spin3;
 }
 
 .bets {
     display:grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 1;
-    grid-template-rows: 3;
     border-color: black;
     border: 2px;
     border-style: solid;
