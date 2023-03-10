@@ -5,8 +5,8 @@ const SPINNERS = {
     banana: {img: 'img/banana.png', value: 15},
 }
 const WAGERAMOUNTS = {
-    wager1: 10,
-    wager2: 20,
+    wager1: 20,
+    wager2: 35,
     wager3: 50,
 }
 

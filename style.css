@@ -3,26 +3,33 @@
 }
 
 body {
+    text-align: center;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 5rem;
     background: rgb(27,206,208);
 background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30%, rgba(222,189,35,1) 80%, rgba(246,121,55,1) 100%);
 }
 
 h1 {
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .board {
     display: grid;
-    width: 75%;
-    height: 75%;
+    font-size: 1rem;
+    grid-gap: 1rem;
+    width: 100%;
+    height: 50%;
     grid-template-areas:
     "winnings winLose purse"
     "spin1 spin2 spin3"
     "wager1 wager2 wager3"
     ". play .";
     grid-template-columns:repeat(3, 1fr);
-    grid-template-rows: 1fr 2fr 1fr 1fr;
+    grid-template-rows: .5fr 1fr .5fr 1fr;
     background-color: rgb(255, 213, 213);
     border-radius: 5%;
     margin: auto;
@@ -33,41 +40,35 @@ h1 {
 }
 
 .cells {
-    display: grid;
-    justify-items: center;
-    align-items: center;
     background-color: whitesmoke;
     border-color: black;
-    border: 2px;
+    border: .125rem;
     border-style: solid;
     border-radius: 20%;
 }
-#winnings {
+#winnings, #purse {
     grid-area: winnings;
-    margin: 50px;
-    padding: 10px;
+    margin: 3.125rem;
+    padding: .625rem;
     height: 40%;
 }
 #purse {
     grid-area: purse;
-    margin: 50px;
-    padding: 10px;
-    height: 40%;
 }
-#play {
+#play  {
     grid-area: play;
-    padding: 10px;
-    margin: 0px 15px 15px ;
+    padding: .625rem;
+    margin: 1rem .938rem .938rem;
 }
 #currentWager {
     grid-area: play;
-    padding: 10px;
-    margin: -100px 15px 15px ;    
+    padding: .625rem;
+    margin: -100px .938rem .938rem;    
 }
 
 #reset {
     grid-area: winLose;
-    margin-top: 100px;
+    margin-top: 6.25rem;
     visibility: hidden;
 }
 #reset:hover {
@@ -82,18 +83,15 @@ h1 {
 }
 
 .spinners {
-    padding: 20px;
-    display: flexbox;
-    align-items: center;
-    justify-items: center;
+    padding: 1.25rem;
     border-color: black;
-    border: 2px;
+    border: .125rem;
     border-style: solid;
     border-radius: 20%;
-    margin: 10px 50px;
+    margin: .625rem 3.125rem;
     background-color: lightblue;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 9.375rem;
+    max-height: 9.375rem;
 }
 
 #spin1 {
@@ -107,17 +105,14 @@ h1 {
 }
 
 .bets {
-    display:grid;
-    align-items: center;
-    justify-items: center;
     border-color: black;
-    border: 2px;
+    border: .125rem;
     border-style: solid;
     border-radius: 20%;
-    margin: 10px;
-    width: 100px;
-    padding: 15px;
-    height: 50px;
+    margin: .625rem;
+    width: 6.5rem;
+    padding: 1rem;
+    height: 3.2rem;
     place-self: center;
 }
 #wager1 {
@@ -132,3 +127,38 @@ h1 {
 .bets:hover {
     background-color: lightgrey;
 }
+
+@media screen and (max-width: 850px) {
+    * {
+        max-height: 800px;
+        max-width: 340px;
+    }    
+    .body {
+        justify-content: center;
+        
+    }
+    .board {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-flow: column wrap;
+        align-content: stretch;
+        width: 100%;
+    }
+    .cells, #reset, #play, {
+        width: 29%;
+        order: 1;
+        justify-content: space-evenly;
+    }
+    .spinners {
+        width: 29%;
+        order: 2;
+    }
+    .bets, #currentWager {
+        width: 29%;
+        order: 3;
+    }
+
+}
+
+
