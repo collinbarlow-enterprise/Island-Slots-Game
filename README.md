@@ -10,11 +10,11 @@
 Island Slots is a slot machine game that includes a wagering system, a tropical color scheme and a win/loss condition. To play the game, select a value [20, 35, 50] and then press play. Continue doing that until you reach a win/loss condition, at which point you will press the reset button to restart the game. 
 
 #### Screenshots of the game:
-[Game at start IslandSlotsTitle.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsTitle.PNG)
+![Game at start IslandSlotsTitle.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsTitle.PNG)
 
-[IslandSlotsLoss.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsLoss.PNG)
+![IslandSlotsLoss.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsLoss.PNG)
 
-[Game at win IslandSlotsWin.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsWin.PNG)
+![Game at win IslandSlotsWin.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsWin.PNG)
 
 
 
