@@ -12,9 +12,9 @@ Island Slots is a slot machine game that includes a wagering system, a tropical 
 #### Screenshots of the game:
 ![Game at start IslandSlotsTitle.png](/.../main/screenshots/IslandSlotsTitle.png)
 
-![IslandSlotsLoss.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsLoss.PNG)
+![IslandSlotsLoss.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsLoss.png)
 
-![Game at win IslandSlotsWin.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsWin.PNG)
+![Game at win IslandSlotsWin.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsWin.png)
 
 
 
