@@ -1,9 +1,7 @@
 # Island-Slots-Game
 <<<<<<< HEAD
-# Island-Slots-Game
-# Island-Slots-Game
-# Island-Slots-Game
 
+Here is a link to a live demo: https://collinbarlow-enterprise.github.io/Island-Slots-Game/
 
 Island Slots is a slot machine game that will include a wagering system and a design/color scheme that will be tropical. 
 
