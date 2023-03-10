@@ -1,62 +1,54 @@
 # Island-Slots-Game
-<<<<<<< HEAD
 
-Here is a link to a live demo: https://collinbarlow-enterprise.github.io/Island-Slots-Game/
 
-Island Slots is a slot machine game that will include a wagering system and a design/color scheme that will be tropical. 
+## Live link:
+(https://collinbarlow-enterprise.github.io/Island-Slots-Game/)
 
-For a slot machine game to work there needs to be:
+### Description: 
+Island Slots is a slot machine game that includes a wagering system, a tropical color scheme and a win/loss condition. 
 
-    a purse with a predefined starting amount
-    
-    a wagering system with the ability to choose from multiple size bets
-    
-    spinners that will be randomly decided and return (or not)specific amounts to the purse that will multiplied by the wager size
+#### Screenshots of the game:
+screenshots can be found in the screenshots folder. 
 
-    there will be one winning condition: the purse reaches a specific value (e.g. 2000)
-    there will be one losing condition: the purse reaches 0
+##### Technologies used:
+Javascript, CSS, HTML
 
-Psuedocode:
-    I need to create a variable that will hold the purse's value
+###### Problems Experienced: 
+The first iteration of this game was a simple javascript code that can still be seen on the "simple code" branch of this project. 
 
-    I need to create an object with multiple properties that will hold the various wager amounts
+When I refactored this code to decrease the reptitiveness I ended up creating several nodelists and arrays that impacted how the logic flowed. The solution ended up being a total rewrite that allowed for easier manipulation of the wager values while reducing the code lines by a third. 
 
-    When a wager amount is selected, the purse will be reduced by that amount
+I ended up combining 6 separate functions into one.
 
-    There will be an object for the 3 spinners that will include 3 arrays, each being the same 
-        (e.g. arr1[pineapple: 10, strawberry: 20, mango: 50], arr2[pineapple: 10, strawberry: 20, mango: 50], arr3: [pineapple: 10, strawberry: 20, mango: 50])
+The specific troublesome code is shown below: 
+```js
+function getSpinner() {
+    spinAllArray.forEach((fruit) => {
+        const fruitKeys = Object.keys(SPINNERS);
+        let rndIdx = Math.floor(Math.random() * fruitKeys.length);
+        fruit.setAttribute("src",`${SPINNERS[fruitKeys[rndIdx]].img}`)});
 
-    When a play button is pressed (after the wager amount has been selected) the object for the spinners will return a random index value from 0-2
+    if (spinAllArray[0].src === spinAllArray[1].src && spinAllArray[0].src === spinAllArray[2].src) {
+        coinSoundAudio.volume = 0.2; 
+        coinSoundAudio.play();      
+        purse = parseInt(`${wager*SPINNERS[fruitKeys[rndIdx]].value}`) + purse;
+    } else {
+        return purse = purse - wager;
+    }
+};
+```
 
-    If the results of the spinners equal specific combinations then a value will be returned back to the purse multiplied by the wager amount 
-        (e.g. pineapple - pineapple - pineapple will return 10 * wagerAmount)
+Another issue I experienced was getting the CSS grid and flexbox to be responsive enough to allow for ease of use across screen sizes. I solved that issue by creating a CSS grid for screentops and then a CSS flex for mobile devices. 
 
-    If the results do not include any of the specific combinations then the purse will not be affected
+###### Stretch Goals/Future Plans:
+The UI will be updated with a more mobile friendly designed. 
 
-    Then the wager system, spinners, and play button need to be reset
+The UI will be updated with a design that minimizes the negative space.  
 
-    This will allow the game to continue until either the lose condition or winning condition is met
+A timer function that forces a fast-pace of play or the purse is reduced. 
 
-Stretch Goals: 
-    include audio like
-        coins: when the purse is added to
-        parrot squaking: when lose/win condition is met
-    
-    timer for selecting bets: if bet is not placed in time then purse is reduced by an amount
+###### Sources:
+I used [CSS Gradient](https://cssgradient.io/) to generate the color gradient background 
 
-Wireframe;
+I used [pngtree](https://pngtree.com/freepng/pineapple-tropical-fruit_5268182.html) for all three of the fruit graphics, and the artist is [Howliekat](https://pngtree.com/howliekat_12244472?type=1).
 
-I've sketched a mockup, but I don't know how to include it in this file
-
-It will have a gradient background with a tropical color scheme
-A h1 with the value of "Island Slots"
-A main div that will appear on top of the background
-That main div will utilize a flex display with a 5x5 grid
-             empty empty empty empty purse
-         empty spinner empty spinner empty spinner
-             empty  empty empty empty empty
-             wager wager wager wager wager
-             empty empty play empty empty 
-=======
-
->>>>>>> f9eed7575f9b147dc76ef48b7d1b82623892c50b
