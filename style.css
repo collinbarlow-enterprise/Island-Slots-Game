@@ -69,7 +69,7 @@ h1 {
 #reset {
     grid-area: winLose;
     margin-top: 6.25rem;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 #reset:hover {
     background-color: lightgrey;
