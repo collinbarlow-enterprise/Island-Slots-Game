@@ -8,7 +8,13 @@
 Island Slots is a slot machine game that includes a wagering system, a tropical color scheme and a win/loss condition. 
 
 #### Screenshots of the game:
-screenshots can be found in the screenshots folder. 
+Game at start IslandSlotsTitle.png
+
+Game at loss IslandSlotsLoss.png
+
+Game at win IslandSlotsWin.png
+
+
 
 ##### Technologies used:
 Javascript, CSS, HTML
