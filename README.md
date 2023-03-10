@@ -1,14 +1,22 @@
 # Island-Slots-Game
-
+![](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ## Live link:
 (https://collinbarlow-enterprise.github.io/Island-Slots-Game/)
 
 ### Description: 
-Island Slots is a slot machine game that includes a wagering system, a tropical color scheme and a win/loss condition. 
+Island Slots is a slot machine game that includes a wagering system, a tropical color scheme and a win/loss condition. To play the game, select a value [20, 35, 50] and then press play. Continue doing that until you reach a win/loss condition, at which point you will press the reset button to restart the game. 
 
 #### Screenshots of the game:
-screenshots can be found in the screenshots folder. 
+[Game at start IslandSlotsTitle.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsTitle.PNG)
+
+[IslandSlotsLoss.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsLoss.PNG)
+
+[Game at win IslandSlotsWin.png](https://github.com/collinbarlow-enterprise/Island-Slots-Game/blob/main/screenshots/IslandSlotsWin.PNG)
+
+
 
 ##### Technologies used:
 Javascript, CSS, HTML
@@ -51,4 +59,6 @@ A timer function that forces a fast-pace of play or the purse is reduced.
 I used [CSS Gradient](https://cssgradient.io/) to generate the color gradient background 
 
 I used [pngtree](https://pngtree.com/freepng/pineapple-tropical-fruit_5268182.html) for all three of the fruit graphics, and the artist is [Howliekat](https://pngtree.com/howliekat_12244472?type=1).
+
+
 
