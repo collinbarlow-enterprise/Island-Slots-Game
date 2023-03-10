@@ -58,3 +58,5 @@ I used [CSS Gradient](https://cssgradient.io/) to generate the color gradient ba
 
 I used [pngtree](https://pngtree.com/freepng/pineapple-tropical-fruit_5268182.html) for all three of the fruit graphics, and the artist is [Howliekat](https://pngtree.com/howliekat_12244472?type=1).
 
+	https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
+
