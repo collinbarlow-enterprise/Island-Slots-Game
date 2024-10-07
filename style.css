@@ -3,26 +3,43 @@
 }
 
 body {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr; /* Column ratio 1:2 */
+    grid-template-rows: 1fr 2fr 2fr 2fr 1fr;    /* Row ratio 1:2 */
+    gap: 10px; 
+
+    grid-template-areas:
+    ". header header header ."
+    ". boardGrid boardGrid boardGrid ."
+    ". boardGrid boardGrid boardGrid ."
+    ". boardGrid boardGrid boardGrid ."
+    ". . . . .";
+
+
+
     text-align: center;
-    width: 75%;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
     background: rgb(27,206,208);
 background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30%, rgba(222,189,35,1) 80%, rgba(246,121,55,1) 100%);
 }
 
 h1 {
+    grid-area: header;
     text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    /* margin-top: 2rem; */
+    /* margin-bottom: 2rem; */
 }
 
 .board {
+    grid-area: boardGrid;
     display: grid;
-    font-size: 1rem;
+    /* font-size: 1rem; */
     grid-gap: 1rem;
-    width: 100%;
-    height: 50%;
+    width: 100%; 
+    height: 100%;
     grid-template-areas:
     "winnings winLose purse"
     "spin1 spin2 spin3"
@@ -48,27 +65,27 @@ h1 {
 }
 #winnings, #purse {
     grid-area: winnings;
-    margin: 3.125rem;
-    padding: .625rem;
-    height: 40%;
+    /* margin: 3.125rem; */
+    /* padding: .625rem; */
+    /* height: 40%; */
 }
 #purse {
     grid-area: purse;
 }
 #play  {
     grid-area: play;
-    padding: .625rem;
-    margin: 1rem .938rem .938rem;
+    /* padding: .625rem; */
+    /* margin: 1rem .938rem .938rem; */
 }
 #currentWager {
     grid-area: play;
-    padding: .625rem;
-    margin: -100px .938rem .938rem;    
+    /* padding: .625rem; */
+    /* margin: -100px .938rem .938rem;     */
 }
 
 #reset {
     grid-area: winLose;
-    margin-top: 6.25rem;
+    /* margin-top: 6.25rem; */
     visibility: hidden;
 }
 #reset:hover {
@@ -83,12 +100,12 @@ h1 {
 }
 
 .spinners {
-    padding: 1.25rem;
+    /* padding: 1.25rem; */
     border-color: black;
     border: .125rem;
     border-style: solid;
     border-radius: 20%;
-    margin: .625rem 3.125rem;
+    /* margin: .625rem 3.125rem; */
     background-color: lightblue;
     max-width: 9.375rem;
     max-height: 9.375rem;
@@ -109,10 +126,10 @@ h1 {
     border: .125rem;
     border-style: solid;
     border-radius: 20%;
-    margin: .625rem;
-    width: 6.5rem;
-    padding: 1rem;
-    height: 3.2rem;
+    /* margin: .625rem; */
+    /* width: 6.5rem; */
+    /* padding: 1rem; */
+    /* height: 3.2rem; */
     place-self: center;
 }
 #wager1 {
