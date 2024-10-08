@@ -107,7 +107,7 @@ background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30
     visibility: hidden;
     /* grid-area: winLose; */
   
-    color: red;
+    color: rgb(239, 1, 1);
 }
 
 .spinners {
@@ -172,6 +172,18 @@ img {
 
 @media screen and (max-width: 1000px) {
     
+}
+
+/* Default font size for desktop */
+.cells {
+    font-size: 1rem; /* Default size for larger screens */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .cells {
+        font-size: x-small; /* Adjusts font size for mobile */
+    }
 }
 
 /* @media screen and (max-width: 400px) {
