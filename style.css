@@ -51,7 +51,7 @@ background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30
     border-radius: 5%;
     margin: auto;
     place-items: center; /* Centers both horizontally and vertically */
-    box-shadow: 0px 10px 20px 5px;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.66);
     place-self: center;
     padding: 10px;
 }
