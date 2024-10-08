@@ -1,13 +1,13 @@
   /*----- constants -----*/
 const SPINNERS = {
-    pineapple: {img: 'img/pineapple.png', value: 5},
-    mango: {img: 'img/mango.png', value: 8},
-    banana: {img: 'img/banana.png', value: 15},
+    pineapple: {img: 'img/pineapple.png', value: 2},
+    mango: {img: 'img/mango.png', value: 3},
+    banana: {img: 'img/banana.png', value: 5},
 }
 const WAGERAMOUNTS = {
-    wager1: 20,
-    wager2: 35,
-    wager3: 50,
+    wager1: 50,
+    wager2: 75,
+    wager3: 100,
 }
 
 const fruitKeys = Object.keys(SPINNERS);

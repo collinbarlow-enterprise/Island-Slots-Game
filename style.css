@@ -85,7 +85,7 @@ background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30
 }
 
 #reset {
-    grid-area: winLose;
+    /* grid-area: winLose; */
     /* margin-top: 6.25rem; */
     visibility: hidden;
 }
@@ -93,10 +93,15 @@ background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30
     background-color: lightgrey;
 }
 
-#winLose {
-    visibility: hidden;
+#winLoseContainer {
     grid-area: winLose;
     place-self: center;
+}
+
+#winLose {
+    visibility: hidden;
+    /* grid-area: winLose; */
+  
     color: red;
 }
 
