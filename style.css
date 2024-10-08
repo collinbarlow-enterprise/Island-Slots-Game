@@ -78,6 +78,11 @@ background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30
     /* padding: 5%; */
     /* margin: 1rem .938rem .938rem; */
 }
+
+/* #play:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+} */
 #currentWager {
     grid-area: wager;
     /* padding: 5%; */
@@ -152,8 +157,11 @@ background: linear-gradient(0deg, rgba(27,206,208,1) 15%, rgba(230,120,163,1) 30
 #wager3 {
     grid-area: wager3;
 }
-.bets:hover {
+
+#play:hover, .bets:hover {
     background-color: lightgrey;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 img {
